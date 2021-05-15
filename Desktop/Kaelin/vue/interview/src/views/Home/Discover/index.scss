@@ -1,0 +1,115 @@
+$discover_margin: 10px;
+.discover-container {
+  position: relative;
+  background: $gray-3;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  .discover-head {
+    position: fixed;
+    width: 100%;
+    height: 50px;
+  }
+  .discover-data-content {
+    position: fixed;
+    top: 50px;
+    bottom: 50px;
+    width: 100%;
+    overflow-y: auto;
+    .content {
+      margin-top: $discover_margin;
+      background: $white;
+      padding: 0 15px;
+      overflow: hidden;
+    }
+    // 面试技巧样式
+    .technic-content {
+      .technic-data {
+        margin-top: 28px;
+      }
+    }
+    // 市场数据样式
+    .market-content {
+      font-size: 14px;
+      .market-data-info{
+        color: #545671;
+        .market-host{
+          margin: 28px 0 26px 0;
+         span {
+            padding:3px 6px;
+            background: #ECEAEA;
+            margin: 0 6px;
+            border-radius: 3px;
+          }
+        }
+        .market-data-item{
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 21px;
+          .market-year{
+            width: 45px;
+            white-space: nowrap;
+          }
+          .market-data{
+            flex: 1;
+            margin: 0 8px;
+            border-radius:3px;
+            background: #EBDFDF;
+            .market-inner{
+              height: 100%;
+              color: $white;
+              text-align: right;
+              padding-right: 6px;
+              background: #FE6D67;
+              box-sizing: border-box;
+              border-radius: 3px;
+            }
+          }
+          .market-status{
+            width: 50px;
+            span {
+              margin-left: 8px;
+              white-space: nowrap;
+            }
+            .iconfont{
+              font-weight: 700;
+            }
+            .iconicon_xiajiang{
+              color: #fe6d67;
+              }
+            .iconicon_shangsheng{
+              color: #60d183;
+              }
+          }
+        }
+        .market-more{
+          text-align: center;
+          padding: 23px;
+          span{
+            margin-right: 8px;
+          }
+          .iccon_shouqi{
+            display: inline-block;
+            transform: rotate(180deg);
+          }
+        }
+      }
+    }
+    // 面经分享样式
+    .share-content {
+      .shareData{
+        
+      }
+    }
+    .footer {
+      text-align: center;
+      margin: 24px 0;
+      font-size: 14px;
+      font-weight: 400;
+      color: #B4B4BD;
+      letter-spacing: 3px;
+    }
+
+  }
+ 
+}

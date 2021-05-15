@@ -1,0 +1,150 @@
+.mine-container {
+  position: relative;
+  height: 100vh;
+  background: $gray-3;
+  box-sizing: border-box;
+  .content {
+    width: 100%;
+    .mine-info-head {
+      position: fixed;
+      width: 375px;
+      height: 260px;
+      color: $white;
+      background: linear-gradient(45deg, $orange-dark, $orange);
+      .info-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 15px;
+        .head {
+          margin-top: 31px;
+          width: 230px;
+          h2 {
+            font-size: 21px;
+          }
+          p {
+            margin-top: 8px;
+            font-size: $font-size-sm;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            letter-spacing: 3px;
+            opacity: 0.8;
+          }
+        }
+        .mine-avatar {
+          width: 50px;
+          height: 50px;
+          margin-top: 32px;
+          margin-right: 37px;
+          img {
+            width: 100%;
+            height: 100%;
+            border: 3px solid rgba(255, 255, 255, 0.38);
+            border-radius: 50%;
+            object-fit: cover;
+          }
+        }
+      }
+      .mine-data {
+        display: flex;
+        justify-content: space-around;
+        text-align: center;
+        margin-top: 34px;
+        font-size: $font-size-sm;
+        .data-item {
+          .data-num {
+            font-size: 21px;
+            font-weight: 600;
+          }
+          .data-desc {
+            margin-top: 13px;
+            opacity: 0.8;
+          }
+        }
+      }
+    }
+    .mine-content {
+      position: fixed;
+      overflow-y: auto;
+      top: 260px;
+      bottom: 50px;
+      width: 100%;
+      // padding-bottom: 60px;
+      .share-content {
+        width: 345px;
+        height: 143px;
+        margin: 15px;
+        border-radius: 8px;
+        background: $white;
+        font-size: $font-size-sm;
+        overflow: hidden;
+        h2 {
+          font-size: $font-size-md;
+          font-weight: 600;
+          margin-top: 21px;
+          margin-left: 4%;
+          height: 20px;
+          line-height: 20px;
+          color: #181a39;
+        }
+        .share-box {
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          text-align: center;
+          margin-top: 18px;
+          .share-item {
+            .share-yesterday {
+              font-size: $font-size-xs;
+              color: $gray-6;
+              .share-data {
+                color: lighten($green, 23%);
+              }
+            }
+            .share-num {
+              margin: 10px 0 6px 0;
+              font-weight: 400;
+              font-size: 21px;
+            }
+            .total-text {
+              font-size: $font-size-sm;
+              color: $gray-8;
+              font-weight: 400;
+            }
+          }
+        }
+      }
+      .mine-data-content {
+        margin: 15px;
+        border-radius: 8px;
+        .item-cell {
+          margin: 0;
+        }
+      }
+    }
+  }
+  .mine-cell {
+    width: 345px;
+    height: 55px;
+    line-height: 55px;
+    margin: 15px;
+    padding: 0 23px;
+    font-size: $font-size-md;
+    border-radius: 8px;
+    .mine-icon {
+      margin-right: 13px;
+      font-size: 21px;
+      vertical-align: middle;
+    }
+    ::v-deep.custom-title {
+      vertical-align: middle;
+      color: #181a39;
+      font-weight: 400;
+    }
+    ::v-deep.van-icon {
+      line-height: 55px;
+      margin-left: 8px;
+    }
+  }
+}

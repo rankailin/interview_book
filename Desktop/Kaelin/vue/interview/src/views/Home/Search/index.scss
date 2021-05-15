@@ -1,0 +1,56 @@
+.search-container{
+  position: relative;
+  .search-title{
+    position: fixed;
+    width: 100%;
+    .search-demo{
+      padding: 15px;
+    }
+  }
+  .search-content-box{
+    position: fixed;
+    top: 110px;
+    bottom: 0;
+    width: 100%;
+    padding: 0 15px;
+    box-sizing: border-box;
+    .search-record{
+      .search {
+        h3{
+          height: 25px;
+          line-height: 25px;
+          margin: 23px 0;
+          font-family: PingFangSC, PingFangSC-Medium;
+          font-size: 18px;
+          color: $black;
+        }    
+        .search-text{
+          display: flex;
+          flex-wrap: wrap;
+          font-size: 12px;
+          color: $gray-6;
+          li{
+            margin-right: 10px;
+            margin-bottom: 11px;
+            padding: 8px 11px;
+            background: $gray-3;
+            border-radius: 8px;
+          }
+        }
+      }
+      .search-history{
+        .history{
+          display: flex;
+          justify-content:space-between;
+          align-items: center;
+          .clear{
+            padding: 8px;
+            font-size: $font-size-md;
+            color: $gray-5;
+            letter-spacing: 3px;
+          }
+        }
+      }
+    }
+  }
+}
