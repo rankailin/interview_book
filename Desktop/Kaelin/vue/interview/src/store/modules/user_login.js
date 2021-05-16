@@ -31,6 +31,7 @@ export default {
         const user = await loginAPI.getUserInfo();
         // console.log(user);
         commit('SET_USER_INFO', user);
+        commit('SET_IS_LOGIN', true);
       } catch (err) {
         console.log(err);
       }

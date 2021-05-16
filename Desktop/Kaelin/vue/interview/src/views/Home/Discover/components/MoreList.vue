@@ -25,6 +25,9 @@ export default {
       type: String,
       required: true,
     },
+    newQ: {
+      type: String,
+    },
   },
   components: {
     ShareDemo,
@@ -39,9 +42,9 @@ export default {
       let resLoadData = null;
       try {
         if (this.moreType === 'technic') {
-          resLoadData = await artcleAPI.getTechnicData(loadInfo);
+          resLoadData = await artcleAPI.getListData(loadInfo, 'technic');
         } else if (this.moreType === 'share') {
-          resLoadData = await artcleAPI.getShareData(loadInfo);
+          resLoadData = await artcleAPI.getListData(loadInfo, 'share');
         }
         console.log(resLoadData);
         return resLoadData;

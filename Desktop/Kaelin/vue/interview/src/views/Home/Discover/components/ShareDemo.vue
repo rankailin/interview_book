@@ -1,7 +1,12 @@
 <template>
   <div class="share-demo-container" v-if="shareList">
-    <div class="share-data-item" v-for="share in shareList" :key="share.id">
-      <h5 class="share-title">{{ share.title }}</h5>
+    <div
+      class="share-data-item"
+      v-for="share in shareList"
+      :key="share.id"
+      @click=" toDetails(share)"
+    >
+      <h5 class="share-title" v-html="share.title"></h5>
       <div class="share-desc">{{ share.content }}</div>
       <div class="share-other">
         <p class="author-info">
@@ -26,6 +31,12 @@
 export default {
   name: 'ShareDemo',
   props: ['shareList'],
+  methods: {
+    toDetails(item) {
+      // console.log(item);
+      this.$router.push({ name: 'ContentDetails', query: { content_type: 'share', id: item.id } });
+    },
+  },
 };
 </script>
 

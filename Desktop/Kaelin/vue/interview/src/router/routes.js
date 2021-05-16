@@ -45,6 +45,12 @@ export default [
         meta: { title: '数据列表', unwantedTabber: true },
       },
       {
+        name: 'ContentDetails',
+        path: 'content_details',
+        component: () => import('@/views/Home/ContentDetails'),
+        meta: { title: '内容详情', unwantedTabber: true },
+      },
+      {
         name: 'Search',
         path: 'search',
         component: () => import('@/views/Home/Search'),

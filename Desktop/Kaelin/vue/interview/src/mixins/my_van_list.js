@@ -13,6 +13,8 @@ export default {
       limit: 3,
       // 总的数据条数
       total: -1,
+      // 关键字
+      q: '',
     };
   },
   methods: {
@@ -23,12 +25,17 @@ export default {
       const loadInfo = {
         start: this.start,
         limit: this.limit,
-        q: '',
+        q: this.newQ,
       };
       // 场景中一般为 ajax 请求
       const refLoad = await this.loadData(loadInfo);
       this.total = refLoad.total;
       this.dataList.push(...refLoad.list);
+      this.dataList.forEach((item) => {
+        // eslint-disable-next-line no-param-reassign
+        item.title = item.title.replace(this.newQ, `<span style="color:red">${this.newQ}</span>`);
+        console.log(item.title, this.newQ);
+      });
       console.log(this.dataList, this.total);
       // 加载状态结束
       this.loading = false;

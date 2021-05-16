@@ -21,6 +21,8 @@ import {
   IndexBar,
   IndexAnchor,
   Search,
+  Popup,
+  Overlay,
 } from 'vant';
 
 Vue.use(NavBar);
@@ -44,3 +46,5 @@ Vue.use(DropdownItem);
 Vue.use(IndexBar);
 Vue.use(IndexAnchor);
 Vue.use(Search);
+Vue.use(Popup);
+Vue.use(Overlay);

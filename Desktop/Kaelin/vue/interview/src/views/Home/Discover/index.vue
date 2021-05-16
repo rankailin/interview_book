@@ -56,7 +56,6 @@
           <ShareDemo :shareList="shareData" />
         </div>
       </div>
-      <div class="footer">------到底了------</div>
     </div>
   </div>
 </template>
@@ -105,7 +104,7 @@ export default {
     },
     /** 获取发现页面所有首次加载数据 */
     async getDiscoverData() {
-      const resTechnic = await artcleAPI.getTechnicData({ start: 0, limit: 6, q: '' });
+      const resTechnic = await artcleAPI.getListData({ start: 0, limit: 6, q: '' }, 'technic');
       this.technicData = resTechnic.list;
       this.getMarketData();
       this.getShareData();
@@ -120,7 +119,7 @@ export default {
     },
     /** 获取面经分享数据 */
     async getShareData() {
-      const resShare = await artcleAPI.getShareData({ start: 0, limit: 6, q: '' });
+      const resShare = await artcleAPI.getListData({ start: 0, limit: 6, q: '' }, 'share');
       this.shareData = resShare.list;
       // console.log(resShare);
     },

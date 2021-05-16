@@ -7,6 +7,7 @@
         <van-search
           v-model="searchVal"
           shape="round"
+           show-action
           @search="seachData(searchVal)"
           placeholder="请输入搜索关键词"
         />
@@ -14,9 +15,9 @@
     </div>
     <div class="search-content-box">
       <!-- 搜索记录 -->
-      <div class="search-record">
+      <div class="search-record" v-if="!searchVal">
         <!-- 大家都在搜 -->
-        <div class="search search-hot" v-if="searchRecord">
+        <div class="search search-hot" >
           <h3>大家都在搜</h3>
           <ul class="search-text">
             <li v-for="item in searchRecord" :key="item" @click="seachData(item)">{{ item }}</li>
@@ -34,7 +35,9 @@
         </div>
       </div>
       <!-- 展示搜索数据 -->
-      <div class="search-data-list"></div>
+      <div class="search-data-list" v-if="searchVal" >
+        <MoreList :newQ="searchVal" :moreType="searchKind" />
+      </div>
     </div>
   </div>
 </template>
@@ -42,8 +45,13 @@
 <script>
 import { artcleAPI } from '@/api';
 import { MKToken } from '@/utils';
+import MoreList from '../Discover/components/MoreList.vue';
 
 export default {
+  name: 'Search',
+  components: {
+    MoreList,
+  },
   data() {
     return {
       searchVal: '',
@@ -52,7 +60,7 @@ export default {
     };
   },
   created() {
-    this.getHotSeach();
+    this.takeHotSearch();
     this.historyRecord = JSON.parse(MKToken.getMKToken('HISTORY')) || [];
   },
   computed: {
@@ -94,14 +102,14 @@ export default {
       MKToken.setMKToken('HISTORY', JSON.stringify(this.historyRecord));
     },
     /** 接受数据啦 */
-    async getHotSeach() {
+    takeHotSearch() {
       if (this.searchKind === 'technic') {
         this.getHotSearch('technicTopSearch');
       } else if (this.searchKind === 'share') {
         this.getHotSearch('shareTopSearch');
       }
     },
-    /** 获取面经热搜数据 */
+    /** 获取面经/面试技巧热搜数据 */
     async getHotSearch(searchText) {
       try {
         this.searchRecord = await artcleAPI.getHotSearch(searchText);

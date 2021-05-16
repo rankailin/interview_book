@@ -53,7 +53,7 @@ export default {
   methods: {
     async onLoad() {
       // 异步更新数据
-      const resShare = await artcleAPI.getShareData({ start: 0, limit: 6, q: '' });
+      const resShare = await artcleAPI.getListData({ start: 0, limit: 6, q: '' }, 'share');
       this.list = resShare.list;
       this.loading = false;
 
